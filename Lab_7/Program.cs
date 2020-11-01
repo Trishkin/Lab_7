@@ -49,7 +49,32 @@ namespace Laba_7
                 Console.WriteLine($"I'm all");
             }
         }
+        public static void TestPriceException()
+        {
+            Library library1 = new Library();
 
+            try
+            {
+                library1.listOfBooks.Add(new Textbook() { Price = -4 });
+            }
+
+            catch (PriceShouldBePositiveException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Source);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"I'm all");
+            }
+        }
 
         static void Main(string[] args)
         {
