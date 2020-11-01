@@ -75,7 +75,29 @@ namespace Laba_7
                 Console.WriteLine($"I'm all");
             }
         }
+        public static void TestNoNameOfBookException()
+        {
+            Library library2 = new Library();
 
+            try
+            {
+                library2.listOfBooks.Add(new Textbook() { Price = 4, NameOfBook = "" });
+            }
+
+            catch (NoNameOfBookException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"I'm all");
+            }
+        }
         static void Main(string[] args)
         {
             //TestLibraryIsEmptyException();
