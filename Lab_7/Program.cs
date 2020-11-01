@@ -49,6 +49,7 @@ namespace Laba_7
                 Console.WriteLine($"I'm all");
             }
         }
+
         public static void TestPriceException()
         {
             Library library1 = new Library();
@@ -75,6 +76,7 @@ namespace Laba_7
                 Console.WriteLine($"I'm all");
             }
         }
+
         public static void TestNoNameOfBookException()
         {
             Library library2 = new Library();
@@ -98,6 +100,54 @@ namespace Laba_7
                 Console.WriteLine($"I'm all");
             }
         }
+
+        public static void ZeroDivideException()
+        {
+            try
+            {
+                int zero = 0;
+                int number = 7 / zero;
+            }
+
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"I'm all");
+            }
+        }
+
+        public static void IndexException()
+        {
+            try
+            {
+                int minusOne = -1;
+                int[] number = new int[4];
+                number[minusOne] = 7;
+            }
+
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"I'm all");
+            }
+        }
+
         static void Main(string[] args)
         {
             //TestLibraryIsEmptyException();
